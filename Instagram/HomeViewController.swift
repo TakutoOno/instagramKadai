@@ -18,7 +18,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     //Firestoreのリスナー
     var listener: ListenerRegistration?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,8 +76,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         cell.commentButton.addTarget(self, action: #selector(handleCommentButton(_:forEvent:)), for: .touchUpInside)
         
-//        cell.mainTableViewCellDelegate = self
-        
         return cell
     }
     
@@ -126,6 +124,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         commentViewController.postData = postData
         
         self.present(commentViewController, animated: true, completion: nil)
-
+        
     }
 }

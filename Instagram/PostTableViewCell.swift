@@ -25,10 +25,10 @@ class PostTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -42,19 +42,19 @@ class PostTableViewCell: UITableViewCell {
         
         //キャプションの表示
         self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
-         
+        
         //コメントの表示
-//        if postData.comments != nil {
-            commentArray = ""
-            postData.comments.forEach { comment in
-               let i = "\(comment)\n"
-                 commentArray = commentArray + i
-            }
-            self.commentLabel.text = "\(commentArray)"
-            
-//        } else {
-//            self .commentLabel.text = "コメント0件"
-//        }
+        if postData.comments.count != 0 {
+        commentArray = ""
+        postData.comments.forEach { comment in
+            let i = "\(comment)\n"
+            commentArray = commentArray + i
+        }
+        self.commentLabel.text = "\(commentArray)"
+        
+        } else {
+            self .commentLabel.text = "コメント0件"
+        }
         //日時の表示
         self.dateLabel.text = ""
         if let date = postData.date {

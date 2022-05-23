@@ -39,12 +39,12 @@ class PostData: NSObject {
                 self.isLiked = true
             }
         }
-
+        
         if let comments = postDic["comments"] as? [String] {
             self.comments = comments
         }
-
-        }
+        
     }
+}
 
 

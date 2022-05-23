@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
     //アカウント作成ボタンをタップした時に呼ばれるメソッド
     @IBAction func handleCreateAccountButton(_ sender: Any) {
         if let address = mailAddressTextField.text, let password = passwordTextField.text, let displayName = displayNameTextField.text {
-           
+            
             //アドレスとパスワードと表示名のいずれかでも入力させていない時は何もしない
             if address.isEmpty || password.isEmpty || displayName.isEmpty {
                 print("DEBUG_PRINT: 何かが空文字です。")
